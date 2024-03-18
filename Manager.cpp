@@ -4,8 +4,8 @@
 
 #include "Manager.h"
 
-Manager::Manager(const std::string &name, const std::string &surname, int earnings, int subordinates) :
-        Employee(name, surname, earnings), subordinates(subordinates) {}
+Manager::Manager(std::string name, std::string surname, int salary, int subordinates)
+    : Employee(name, surname, salary), subordinates(subordinates)  {}
 
 int Manager::getSubordinates() const {
     return subordinates;
@@ -13,4 +13,12 @@ int Manager::getSubordinates() const {
 
 void Manager::setSubordinates(int subordinates) {
     Manager::subordinates = subordinates;
+}
+
+void Manager::introduceYourself() {
+    Employee::introduceYourself();
+}
+
+void Manager::changeSalary(Employee &s, int change) {
+    s.salary=change;
 }

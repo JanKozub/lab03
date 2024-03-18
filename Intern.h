@@ -6,19 +6,12 @@
 #define LAB_03_INTERN_H
 #include "Employee.h"
 
-class Intern : protected Employee {
+class Intern : public Employee {
 public:
-    Intern(const std::string &name, const std::string &surname, int salary);
+    Intern(std::string name, std::string surname, int salary);
 
-    void introduceYourself() const override;
-
-    void setName(std::string name);
-
-    std::string getName();
-
-    void setSurname(std::string surname);
-
-    std::string getSurname();
+    void introduceYourself() override;
 };
+
 
 #endif //LAB_03_INTERN_H

@@ -12,13 +12,15 @@ private:
     int subordinates;
 
 public:
-    Manager(const std::string &name, const std::string &surname, int earnings, int subordinates);
+    Manager(std::string name, std::string surname, int salary, int subordinates);
 
     int getSubordinates() const;
 
     void setSubordinates(int subordinates);
 
-    friend void Employee::changeSalary(Employee& employee, int salary);
+    void introduceYourself() override;
+
+    void changeSalary(Employee &employee, int change);
 };
 
 

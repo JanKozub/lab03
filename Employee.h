@@ -16,22 +16,18 @@ protected:
 
 public:
     Employee(std::string name, std::string surname, int salary);
+    std::string &getName();
+    void setName(std::string &name);
 
-    virtual void introduceYourself() const;
+    std::string &getSurname();
+    void setSurname(std::string &surname);
 
-    const std::string &getName() const;
-
-    void setName(const std::string &name);
-
-    const std::string &getSurname() const;
-
-    void setSurname(const std::string &surname);
-
-    int getSalary() const;
-
+    int getSalary();
     void setSalary(int salary);
 
-    void changeSalary(Employee& employee, int salary);
+    virtual void introduceYourself();
+
+    friend class Manager;
 };
 
 
